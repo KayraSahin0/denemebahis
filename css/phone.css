@@ -1,0 +1,119 @@
+.phone-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 0;
+  background: linear-gradient(145deg, #3b82f6, #1d4ed8);
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.phone-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(2 6 23 / 0.75);
+  display: grid;
+  place-items: center;
+  z-index: 11;
+  animation: fadeIn 0.25s ease;
+}
+
+.phone-device {
+  width: 330px;
+  min-height: 600px;
+  border-radius: 30px;
+  background: linear-gradient(160deg, #0b1220, #0f172a);
+  border: 1px solid rgb(148 163 184 / 0.25);
+  position: relative;
+  padding: 46px 16px 18px;
+  animation: phonePop 0.28s ease;
+}
+
+.phone-notch {
+  width: 140px;
+  height: 28px;
+  border-radius: 20px;
+  background: #111827;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.phone-screen {
+  height: 540px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgb(30 41 59 / 0.75), rgb(15 23 42 / 0.95));
+  padding: 14px;
+}
+
+.app-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.app-icon {
+  border: 0;
+  border-radius: 12px;
+  height: 82px;
+  background: rgb(51 65 85 / 0.6);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.app-icon.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.phone-app-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+@keyframes phonePop {
+  from {
+    transform: scale(0.95) translateY(12px);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
