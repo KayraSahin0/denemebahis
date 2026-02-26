@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Sim Betting Manager</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/phone.css" />
+    <link rel="stylesheet" href="css/betting.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar card glass">
+        <div>
+          <h1>Football Sim Betting Manager</h1>
+          <p class="subtitle">Build your bankroll with smart picks</p>
+        </div>
+        <div class="coin-pill" id="coinDisplay">Coins: 100</div>
+      </header>
+
+      <main class="main-layout">
+        <section class="selectors card glass">
+          <h2>League Setup</h2>
+          <div class="selector-grid">
+            <label>
+              Country
+              <select id="countrySelect"></select>
+            </label>
+            <label>
+              League
+              <select id="leagueSelect"></select>
+            </label>
+            <button id="generateMatchesBtn" class="btn-primary">Generate Matches</button>
+          </div>
+          <div id="teamsPreview" class="teams-preview"></div>
+        </section>
+
+        <section class="matches card glass">
+          <div class="section-header">
+            <h2>Matchday</h2>
+            <p>Simulate matches and resolve your bets</p>
+          </div>
+          <div id="matchesContainer" class="match-list"></div>
+        </section>
+
+        <section class="history card glass">
+          <h2>Bet History</h2>
+          <div id="historyContainer" class="history-list"></div>
+        </section>
+      </main>
+
+      <button id="phoneToggle" class="phone-fab" aria-label="Open phone">📱</button>
+
+      <div id="phoneOverlay" class="phone-overlay hidden">
+        <div id="phoneDevice" class="phone-device">
+          <div class="phone-notch"></div>
+          <button id="closePhone" class="phone-close" aria-label="Close phone">✕</button>
+          <div id="phoneHome" class="phone-screen phone-home">
+            <h3>Apps</h3>
+            <div class="app-grid">
+              <button id="openBettingApp" class="app-icon">
+                <span>💸</span>
+                <small>Betting</small>
+              </button>
+              <button class="app-icon disabled" disabled>
+                <span>⚙️</span>
+                <small>Future App</small>
+              </button>
+              <button class="app-icon disabled" disabled>
+                <span>🔔</span>
+                <small>Notifications</small>
+              </button>
+            </div>
+          </div>
+
+          <div id="bettingAppScreen" class="phone-screen betting-screen hidden">
+            <div class="phone-app-top">
+              <h3>Betting App</h3>
+              <button id="backToPhoneHome" class="btn-ghost">Back</button>
+            </div>
+            <div id="phoneBettingMatches" class="phone-match-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
